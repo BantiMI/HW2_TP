@@ -25,7 +25,9 @@ class Ingredient:
 class Recipe:
     def __init__(self, title, ingredients):
         self.title: str = title
-        self.ingredients: list[Ingredient] = ingredients
+        self.ingredients: list[Ingredient] = []
+        for ingr in ingredients:
+            self.add_ingredient(ingr)
     def add_ingredient(self, ingredient: Ingredient):
         for ingr in self.ingredients:
             if ingr == ingredient:
